@@ -37,6 +37,14 @@
         overflow-y: scroll;
     }
 
+    .lastUpdate {
+        text-align: right;
+        margin: 20px;
+    }
+    .lastUpdate > p {
+        font-size: 10px;
+    }
+
     .imageBlock {
         width: 160px;
         height: 160px;
@@ -206,6 +214,10 @@
 <body>
     <main>
         <div class="leftBlock">
+            <div class="lastUpdate">
+                <p>最終更新日：2024/03/31</p>
+            </div>
+
             <div class="imageBlock">
                 <!-- js、base64 で画像を埋め込む -->
                 <img id="myImage" class="myImage" src="" alt="my">
