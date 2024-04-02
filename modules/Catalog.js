@@ -1,6 +1,3 @@
-//////////////////////////////////////////
-// 定義ブロック
-//////////////////////////////////////////
 const FILTER = document.querySelector("#backFilter");
 const PARENT_WINDOW = document.querySelector("body");
 const MODAL_WINDOW = document.querySelector("#characterWindow");
