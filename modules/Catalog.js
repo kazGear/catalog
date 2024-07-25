@@ -8,7 +8,7 @@ const calcBirthDay = () => {
 
     const thisYearBirthDay = new Date(
         today.getFullYear(),
-        birthDay.getMonth() - 1,
+        birthDay.getMonth(),
         birthDay.getDate()
     );
 
