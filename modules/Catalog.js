@@ -3,29 +3,29 @@ const PARENT_WINDOW = document.querySelector("body");
 const MODAL_WINDOW = document.querySelector("#characterWindow");
 
 const calcBirthDay = () => {
-    const BIRTH_DAY = new Date("1987/08/23");
-    const TODAY = new Date();
+    const birthDay = new Date("1987/08/23");
+    const today = new Date();
 
-    const THIS_YEAR_BIRTH_DAY = new Date(
-        TODAY.getFullYear(),
-        BIRTH_DAY.getMonth() - 1,
-        BIRTH_DAY.getDate()
+    const thisYearBirthDay = new Date(
+        today.getFullYear(),
+        birthDay.getMonth() - 1,
+        birthDay.getDate()
     );
 
     // おおまかに年齢を算出
-    let age = TODAY.getFullYear() - BIRTH_DAY.getFullYear();
+    let age = today.getFullYear() - birthDay.getFullYear();
 
     // 調整
-    if (TODAY < THIS_YEAR_BIRTH_DAY) age--;
+    if (today < thisYearBirthDay) age--;
 
-    const DOM_AGE = document.querySelector("#age");
-    DOM_AGE.textContent = age;
+    const domAge = document.querySelector("#age");
+    domAge.textContent = age;
 };
 
 const openWindow = () => {
-    const BUTTON = document.querySelector("#characterButton");
+    const button = document.querySelector("#characterButton");
 
-    BUTTON.addEventListener("click", () => {
+    button.addEventListener("click", () => {
         FILTER.style.display = "block";
         MODAL_WINDOW.style.display = "block";
         PARENT_WINDOW.style.overflow = "hidden";
@@ -33,9 +33,9 @@ const openWindow = () => {
 };
 
 const closeWindow = () => {
-    const BUTTON = document.querySelector("#characterCloseButton");
+    const button = document.querySelector("#characterCloseButton");
 
-    BUTTON.addEventListener("click", () => {
+    button.addEventListener("click", () => {
         FILTER.style.display = "none";
         MODAL_WINDOW.style.display = "none";
         PARENT_WINDOW.style.overflow = "scroll";
@@ -43,11 +43,11 @@ const closeWindow = () => {
 };
 
 const textDecoration = () => {
-    const DECO_LEFT = "【";
-    const DECO_RIGHT = "】";
-    const TEXTS = document.querySelectorAll(".decoration");
+    const decoLeft = "【";
+    const decoRight = "】";
+    const texts = document.querySelectorAll(".decoration");
 
-    TEXTS.forEach((text) => {
-        text.innerText = DECO_LEFT + text.innerText + DECO_RIGHT;
+    texts.forEach((text) => {
+        texts.innerText = decoLeft + text.innerText + decoRight;
     });
 };
