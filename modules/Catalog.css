@@ -85,7 +85,7 @@ main {
     background: rgb(215, 215, 215);
 }
 
-.histories {
+.history {
     width: 100%;
 }
 
@@ -104,13 +104,13 @@ main {
 .detailTitle {
     font-weight: 800;
 }
-.businessContent {
+.jobContent {
     margin-top: 30px;
 }
-.businessContent > .detailTitle {
+.jobContent > .detailTitle {
     border-bottom: black 1px solid;
 }
-.businessContent > div > p {
+.jobContent > div > p {
     margin: 8px 0 0 12px;
 }
 
