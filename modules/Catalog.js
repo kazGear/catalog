@@ -115,15 +115,15 @@ const histories = [
         "programmingLanguages": "html, css, javaScript, jQuery, java, springBoot, postgreSQL",
         "jobContents": [
             "・基本設計～結合テスト、保守運用、調査、ルーティンの自動化（VBA）、新人の方のコーディング指導",
-            "・新規機能の製造は４画面、３帳票、バッチ５本を担当。",
+            "・新規機能の製造は4画面、3帳票、バッチ5本を担当。",
             "・保守運用：アプリの障害対応、既存不良の解消、顧客依頼の修正作業等。",
             "・製造範囲：WebUI、サーバ・バッチ処理、SQL"
         ]
     },
     {
         "historyTitle": "情報系システム（総合テスト～）",
-        "period": "2024.06 ~ 2024.08",
-        "industry": "住宅関連",
+        "period": "2024.06 ~ 2024.07",
+        "industry": "住宅関連サービス",
         "scale": "30人",
         "programmingLanguages": "C#, ASP.NET, cshtml, javaScript, SQL Server",
         "jobContents": [
@@ -140,7 +140,7 @@ const histories = [
         "programmingLanguages": "C#, ASP.NET, ActiveReport, SQL Server",
         "jobContents": [
             "・詳細設計、コーディング、単体テスト",
-            "・５つの帳票出力を担当。",
+            "・5つの帳票出力機能を担当。",
             "・製造範囲：帳票定義ライブラリ、サーバ処理、SQL"
         ]
     },
@@ -153,7 +153,7 @@ const histories = [
         "jobContents": [
             "・詳細設計、コーディング",
             "・リプレイス：abap言語（SAP）の仕様を調べながらjavaへ翻訳。",
-            "・コーディング：２機能担当（10,000 Step）。"
+            "・コーディング：2機能担当（10,000 Step）。"
         ]
     },
     {
@@ -173,26 +173,26 @@ const histories = [
         "historyTitle": "WEBアプリ & 顧客所有アプリ（新規立ち上げ、既存アプリの改修・障害対応）",
         "period": "2021.06 ~ 2021.12",
         "industry": "製造",
-        "scale": "１名 ※初現場。顧客側はIT技術者0人。",
+        "scale": "1名",
         "programmingLanguages": "html, css, javaScript, C#, VB.net, ASP.net Core, postgreSQL",
         "jobContents": [
             "・要求分析～結合テスト、保守",
             "・VB.NETで作成された既存アプリに対し、機能の追加や改修を行った。",
             "・WEBアプリ（案件管理用）を新規に作成。WebUI、サーバ処理、DB処理、サーバの構築などを行った。",
-            "※技術者としての初陣であるが、単独での常駐であるためプロとしての経験とは言えない。"
+            " ※初現場。顧客側はIT技術者0人 + 単独での常駐であるためプロとしての経験とは言えない。"
         ]
     },
     {
         "historyTitle": "職業訓練（Webアプリ制作）",
         "period": "2020.12 ~ 2021.04",
         "industry": "―",
-        "scale": "チーム：４名、クラス：１５名",
+        "scale": "チーム：4名、クラス：15名",
         "programmingLanguages": "java, postgreSQL, HTML, Servlet, JSP",
         "jobContents": [
             "独学でプログラムに触れた後、基礎固めのため入校。",
             "java, postgreSQL, HTML, Servlet, JSP の基本を学習。",
             "最終課題のチームによるアプリ制作では、詳細設計～実装を担当した。",
-            "実装についてはほぼ一人で担う。",
+            "実装についてはほぼ1人で担う。",
             "帰宅後、休日もひたすらコーディングに打ち込んでいた。"
         ]
     },
@@ -200,7 +200,7 @@ const histories = [
         "historyTitle": "IT以外の主な経歴",
         "period": "2017.05 ~ 2020.09",
         "industry": "税理士業、経理",
-        "scale": "７～４０名",
+        "scale": "7～40名",
         "programmingLanguages": "VBA",
         "jobContents": [
             "税務会計、決算・申告、監査、経理作業、巡回訪問",
