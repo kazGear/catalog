@@ -3,3 +3,5 @@
 ２．zip 形式でダウンロード。  
 ３．zip を展開・解凍する。  
 ４．Catalog.html ファイルを開く。  
+
+※　非推奨ブラウザ　InternetExplorer(動かないかもしれません。)
