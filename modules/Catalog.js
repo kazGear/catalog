@@ -122,7 +122,7 @@ const histories = [
     },
     {
         "historyTitle": "情報系システム（総合テスト～）",
-        "period": "2024.06 ~ 2024.07",
+        "period": "2024.06 ~ 2024.09",
         "industry": "住宅関連サービス",
         "scale": "30人",
         "programmingLanguages": "C#, ASP.NET, cshtml, javaScript, SQL Server",

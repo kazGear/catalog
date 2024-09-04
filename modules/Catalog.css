@@ -68,7 +68,7 @@ main {
     margin: 0;
 }
 
-.characterContent {
+.characterContents {
     margin-bottom: 20px;
 }
 
@@ -201,11 +201,11 @@ main {
     }
 
     .leftBlock {
-        width: 35%;
+        width: 30%;
     }
 
     .rightBlock {
-        width: 65%;
+        width: 70%;
     }
 
     .historyTitle {
