@@ -122,14 +122,14 @@ const histories = [
     },
     {
         "historyTitle": "情報系システム（総合テスト～）",
-        "period": "2024.06 ~ 2024.09",
+        "period": "2024.06 ~ 2024.12",
         "industry": "住宅関連サービス",
         "scale": "30人",
         "programmingLanguages": "C#, ASP.NET, cshtml, javaScript, SQL Server",
         "jobContents": [
             "総合テスト、障害調査、障害対応",
             "・障害発見件数：16件",
-            "・障害対応件数：11件 ※コーディング、単体テスト"
+            "・障害対応件数：54件 ※コーディング、単体テスト"
         ]
     },
     {
