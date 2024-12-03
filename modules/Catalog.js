@@ -64,7 +64,7 @@ const createJobCareer = () => {
         historyDetailHTML.append(`<p><span class="detailTitle">使用言語等：</span>${history.programmingLanguages}</p>`); // 使用言語等
         // 業務内容（経歴詳細の一部）を構築
         const jobContentHTML = $(`<div class="jobContent"></div>`);
-        jobContentHTML.append(`<p class="jobContentTitle">業務内容</p>`);
+        jobContentHTML.append(`<p class="jobContentTitle"><span class="detailTitle">業務内容</span></p>`);
 
         const divInJobContent = $("<div></div>");
         for (const line of history.jobContents) {

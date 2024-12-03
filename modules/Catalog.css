@@ -19,9 +19,25 @@ main {
     height: 100vh;
 }
 
-a {
-    color: #ab9912;
+/*
+colors
+グリーン系：#00ffe1, teal
+イエロー系：#ab9912,
 }
+*/
+a {
+    color: #00ffe1;
+}
+
+.strong {
+    color: #00ffe1;
+    font-weight: 900;
+}
+.detailTitle {
+    color: teal;
+    font-weight: bold
+}
+
 
 .leftBlock {
     width: 100%;
