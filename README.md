@@ -5,3 +5,4 @@
 ４．Catalog.html ファイルを開く。  
 
 ※　非推奨ブラウザ　InternetExplorer(動かないかもしれません。)
+※　不定期更新です。
