@@ -108,8 +108,22 @@ const createJobCareer = () => {
  */
 const histories = [
     {
+        "historyTitle": "情報系アプリ（新規機能開発）",
+        "period": "2025.01 ~ 2025.03",
+        "industry": "金融",
+        "scale": "15 ~ 20名",
+        "programmingLanguages": "html, css, javaScript, jQuery, java, springBoot, postgreSQL",
+        "jobContents": [
+            "・詳細設計～単体テスト",
+            "・2022.01 ~ 2022.08 , 2023.01 ~ 2024.03 の期間と同じ現場で3度目の現場入り。",
+            "・新規機能の開発を担当。",
+            "・要件等が複雑であったため、リファクタリングしながら丁寧にコーディング。",
+            "・製造範囲：WebUI、サーバ処理、SQL"
+        ]
+    },
+    {
         "historyTitle": "情報系アプリ（新規機能開発、機能改修、保守運用）",
-        "period": "2022.01 ~ 2022.08 ＋ 2023.01 ~ 2024.03",
+        "period": "2022.01 ~ 2022.08 , 2023.01 ~ 2024.03",
         "industry": "金融",
         "scale": "15 ~ 20名",
         "programmingLanguages": "html, css, javaScript, jQuery, java, springBoot, postgreSQL",
