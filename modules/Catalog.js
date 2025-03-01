@@ -2,7 +2,7 @@ const PELIOD_STR_LENGTH = 7;
 const HALF_SPACE = "&nbsp;";
 const WHOLE_SPACE = "&emsp;";
 
-const openWindow = () => {
+const addEventOpenWindow = () => {
     $("#characterButton").click(() => {
         $("#backFilter").show();
         $("#modalWindow").show();
@@ -10,7 +10,7 @@ const openWindow = () => {
     });
 };
 
-const closeWindow = () => {
+const addEventCloseWindow = () => {
     $("#characterCloseButton").click(() => {
         $("#backFilter").hide();
         $("#modalWindow").hide();
@@ -40,7 +40,6 @@ const textDecoration = () => {
     const decoRight = "】";
 
     $(".decoration").each((index, element) => {
-        console.log(`${index}: ${element.innerHTML}`)
         element.innerHTML = decoLeft + element.innerHTML + decoRight;
     });
 };
@@ -54,30 +53,31 @@ const createJobCareer = () => {
     // DOM構築
     let historyNo = 1;
     for (const history of historiesJson) {
-        // 経歴タイトルを構築
-        const titleHTML = $(`<h1 class="historyTitle">${HALF_SPACE}#${HALF_SPACE}${historyNo}${WHOLE_SPACE}${history.historyTitle}</h1>`);
-        // 経歴詳細を構築
-        const historyDetailHTML = $(`<div class="historyDetail"></div>`);
-        historyDetailHTML.append(`<p><span class="detailTitle">期間：</span>${history.period}</p>`); // 期間
-        historyDetailHTML.append(`<p><span class="detailTitle">業種：</span>${history.industry}</p>`); // 業種
-        historyDetailHTML.append(`<p><span class="detailTitle">規模：</span>${history.scale}</p>`); // 規模
-        historyDetailHTML.append(`<p><span class="detailTitle">使用言語等：</span>${history.programmingLanguages}</p>`); // 使用言語等
-        // 業務内容（経歴詳細の一部）を構築
-        const jobContentHTML = $(`<div class="jobContent"></div>`);
-        jobContentHTML.append(`<p class="jobContentTitle"><span class="detailTitle">業務内容</span></p>`);
 
-        const divInJobContent = $("<div></div>");
-        for (const line of history.jobContents) {
-            divInJobContent.append(`<p>${line}</p>`);
+        let jobContentDetail = "";
+        for (const detail of history.jobContents) {
+            jobContentDetail += `<p>${detail}</p>`;
         }
-        jobContentHTML.append(divInJobContent);
-        historyDetailHTML.append(jobContentHTML);
-        // 1経歴としてまとめる
-        const historyHTML = $(`<div class="history"></div>`);
-        historyHTML.append(titleHTML);
-        historyHTML.append(historyDetailHTML);
-
-        $("#rightBlock").append(historyHTML);
+        $("#rightBlock").append(
+            `<div class="history">` +
+                // 経歴タイトルを構築
+                `<h1 class="historyTitle">
+                    ${HALF_SPACE}#${HALF_SPACE}${historyNo}${WHOLE_SPACE}${history.historyTitle}
+                 </h1>` +
+                `<div class="historyDetail">` +
+                    `<p><span class="detailTitle">期間：</span>${history.period}</p>` + // 期間
+                    `<p><span class="detailTitle">業種：</span>${history.industry}</p>` + // 業種
+                    `<p><span class="detailTitle">規模：</span>${history.scale}</p>` + // 規模
+                    `<p><span class="detailTitle">使用言語等：</span>${history.programmingLanguages}</p>` + // 使用言語等
+                    `<div class="jobContent">` +
+                        `<p class="jobContentTitle"><span class="detailTitle">業務内容</span></p>` +
+                        `<div>` +
+                            jobContentDetail +
+                        `</div>` +
+                    `</div>` +
+                `</div>` +
+            `</div>`
+        );
         historyNo++;
     }
 }
