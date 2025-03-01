@@ -1,3 +1,32 @@
+/*
+印刷設定
+スクロールで隠れている部分も印刷対象とする
+ */
+@media print {
+    body {
+        overflow: visible !important;
+    }
+    .leftBlock {
+        height: auto !important;
+        overflow: visible !important;
+        color: black !important;
+    }
+    .rightBlock {
+        height: auto !important;
+        overflow: visible !important;
+    }
+    .historyTitle {
+        text-decoration: underline !important;
+        color: mediumpurple !important;
+    }
+    .strong {
+        color: teal !important;
+    }
+    a {
+        color: blue !important;
+    }
+}
+
 /* base, smartPhone スタイル */
 body {
     font-family: "Times New Roman", Times, serif;
