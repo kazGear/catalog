@@ -8,20 +8,22 @@
     </head>
     <body>
         <main>
+            <!-- 自身についてスキル等など -->
             <div class="leftBlock">
                 <div class="lastUpdate">
-                    <p>最終更新日：2025/3/1</p>
+                    <p>最終更新日：2025/3/2</p>
                 </div>
 
+                <!-- イメージ画像 -->
                 <div class="imageBlock">
                     <img id="myImage" class="myImage" src="./modules/me.png" alt="me" />
                 </div>
 
                 <div class="myName">
-                    <p>
-                        尾畑&emsp;一貴<span id="age" class="age">？？</span>歳
-                    </p>
+                    <p>尾畑&emsp;一貴<span id="age" class="age"><!-- JSで計算 --></span>歳</p>
+                    <p>福岡県福岡市在住</p>
                 </div>
+
                 <!-- ポートフォリオ -->
                 <div class="leftContents">
                     <p><span class="strong">ポートフォリオ</span><br/>（未完成。不定期に更新します。）</p>
@@ -41,63 +43,38 @@
                         https://github.com/kazGear/kaz_app.git
                     </a>
                 </div>
+
                 <!-- スキル -->
-                <div class="leftContents">
+                <div id="skills" class="leftContents">
                     <p><span class="strong">Skills</span></p>
                     <hr />
-                    <p>HTML</p>
-                    <p>CSS</p>
-                    <p>JavaScript (jQuery)</p>
-                    <p>TypeScript</p>
-                    <p>React</p>
-                    <p>C# (ASP.NET Core)</p>
-                    <p>Java (Spring Boot)</p>
-                    <p>PostgreSQL</p>
-                    <p>SQL Server</p>
-                    <p>VBA</p>
-                    <p>リファクタリング</p>
-                    <p>リーダブルコーディング</p>
-                    <p>レイヤードアーキテクチャ</p>
+                    <!-- JSで構築 -->
                 </div>
 
-                <div class="leftContents">
+                <!-- スキル（習熟度低め・練習中・関心事） -->
+                <div id="littleSkills" class="leftContents">
                     <p><span class="strong">Skills (習熟度低め・練習中・関心事)</span></p>
                     <hr />
-                    <p>クリーンアーキテチャ</p>
-                    <p>Domain Driven Development</p>
-                    <p>Test Driven Development</p>
-                    <p>基本設計</p>
-                    <p>テーブル設計</p>
-                    <p>SQLチューニング</p>
-                    <p>正規表現</p>
-                    <p>Linux(ubunts)</p>
+                    <!-- JSで構築 -->
                 </div>
+
                 <!-- 使用ツール -->
-                <div class="leftContents">
+                <div id="useTools" class="leftContents">
                     <p><span class="strong">使用ツール、環境</span></p>
                     <hr />
-                    <p>Windows</p>
-                    <p>WinMerge</p>
-                    <p>サクラエディタ</p>
-                    <p>Eclipse</p>
-                    <p>Visual Studio</p>
-                    <p>Visual Studio Code</p>
-                    <p>A5</p>
-                    <p>DBeaver</p>
-                    <p>WinSCP</p>
-                    <p>Putty</p>
+                    <!-- JSで構築 -->
                 </div>
+
                 <!-- その他の情報 -->
                 <div class="characterContents">
-                    <input
-                        id="characterButton"
-                        class="characterButton"
-                        type="button"
-                        value="その他の特徴を見る"
-                    />
+                    <input id="characterButton"
+                           class="characterButton"
+                           type="button"
+                           value="その他の特徴を見る" />
                 </div>
             </div>
 
+            <!-- 経歴部 -->
             <div id="rightBlock" class="rightBlock">
                 <!-- jsで経歴を構築 -->
             </div>
@@ -127,22 +104,7 @@
                 <br />
                 <h3><span class="detailTitle">購入書籍</span></h3>
                 <hr />
-                <p>📖実務で役立つシステム設計の原則</p>
-                <p>📖達人に学ぶSQL徹底指南書</p>
-                <p>📖Head First デザインパターン</p>
-                <p>📖問題解決のための「アルゴリズム × 数学」がしっかり身につく本</p>
-                <p>📖実践ドメイン駆動設計</p>
-                <p>📖リーダブルコード</p>
-                <p>📖プリンシプル オブ プログラミング</p>
-                <p>📖リファクタリング</p>
-                <p>📖システム開発・刷新のためのデータモデル大全</p>
-                <p>📖クリーンアーキテクチャ</p>
-                <p>📖達人プログラマー</p>
-                <p>📖SQLアンチパターン</p>
-                <p>📖ソフトウェア開発現場の「失敗」集めてみた</p>
-                <p>📖good code, bad code</p>
-                <br />
-                <p>※その他５０冊以上</p>
+                <!-- JSで構築 -->
             </div>
             <div class="characterClose">
                 <input id="characterCloseButton" type="button" value="閉じる" />
@@ -151,13 +113,5 @@
 
         <script src="./modules/jQuery3.7.1.min.js"></script>
         <script src="./modules/Catalog.js"></script>
-        <script>
-            createJobCareer();
-
-            calcBirthDay();
-            addEventOpenWindow();
-            addEventCloseWindow();
-            textDecoration();
-        </script>
     </body>
 </html>

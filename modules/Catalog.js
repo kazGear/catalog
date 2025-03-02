@@ -1,6 +1,7 @@
 const PELIOD_STR_LENGTH = 7;
 const HALF_SPACE = "&nbsp;";
 const WHOLE_SPACE = "&emsp;";
+const MY_BIRTH_DAY = "1987/08/23";
 
 const addEventOpenWindow = () => {
     $("#characterButton").click(() => {
@@ -19,7 +20,7 @@ const addEventCloseWindow = () => {
 };
 
 const calcBirthDay = () => {
-    const birthDay = new Date("1987/08/23");
+    const birthDay = new Date(MY_BIRTH_DAY);
     const today = new Date();
 
     const thisYearBirthDay = new Date(
@@ -46,18 +47,19 @@ const textDecoration = () => {
 
 const createJobCareer = () => {
     // 日付文字列 降順ソート (key: 期間の最終年月, 例: 2024/08 < 2024/10)
-    const historiesJson = [...histories].sort(
+    const historiesJson = [...historiesJSON].sort(
         (a, b) => b.period.substring(b.period.length - PELIOD_STR_LENGTH).localeCompare(a.period.substring(a.period.length - PELIOD_STR_LENGTH))
     );
 
     // DOM構築
     let historyNo = 1;
     for (const history of historiesJson) {
+        // 業務内容詳細の構築
+        let jobContentDetails = "";
+        const jobDetails = [...history.jobContents];
+        jobDetails.forEach(detail => jobContentDetails += `<p>${detail}</p>`);
 
-        let jobContentDetail = "";
-        for (const detail of history.jobContents) {
-            jobContentDetail += `<p>${detail}</p>`;
-        }
+        // 経歴を構築
         $("#rightBlock").append(
             `<div class="history">` +
                 // 経歴タイトルを構築
@@ -72,7 +74,7 @@ const createJobCareer = () => {
                     `<div class="jobContent">` +
                         `<p class="jobContentTitle"><span class="detailTitle">業務内容</span></p>` +
                         `<div>` +
-                            jobContentDetail +
+                            jobContentDetails + // 業務内容詳細
                         `</div>` +
                     `</div>` +
                 `</div>` +
@@ -82,6 +84,44 @@ const createJobCareer = () => {
     }
 }
 
+const createSkills = () => {
+    const skills = [...skillsJSON];
+    skills.forEach(skill => $("#skills").append(`<p>${skill}</p>`));
+}
+
+const createLittleSkills = () => {
+    const littleSkills = [...littleSkillsJSON];
+    littleSkills.forEach(skill => $("#littleSkills").append(`<p>${skill}</p>`));
+}
+
+const createUseTools = () => {
+    const useTools = [...useToolsJSON];
+    useTools.forEach(tool => $("#useTools").append(`<p>${tool}</p>`));
+}
+
+const createReadBooks = () => {
+    const readBooks = [...readBooksJSON];
+    readBooks.forEach(book => $("#modalWindow > .contents").append(`<p>📖${book}</p>`));
+    $("#modalWindow > .contents").append("<br/>");
+    $("#modalWindow > .contents").append("※その他５０冊以上");
+}
+
+/**
+ * 処理実行部
+ */
+$(() => {
+    createSkills();
+    createLittleSkills();
+    createUseTools();
+    createJobCareer();
+    createReadBooks();
+
+    calcBirthDay();
+    addEventOpenWindow();
+    addEventCloseWindow();
+    textDecoration();
+});
+
 /***********************************************************
  * jsons
  *
@@ -90,15 +130,15 @@ const createJobCareer = () => {
  ************************************************************/
 
 /**
- * 職務経歴
+ * 職務経歴データ
  *
  * template
 {
-    "historyTitle": "",
-    "period": "",
-    "industry": "",
-    "scale": "",
-    "programmingLanguages": "",
+    "historyTitle": "...",
+    "period": "xxxx.xx ~ xxxx.xx",
+    "industry": "...",
+    "scale": "...",
+    "programmingLanguages": "...",
     "jobContents": [
         内容１，
         内容２，
@@ -106,7 +146,7 @@ const createJobCareer = () => {
     ]
 }
  */
-const histories = [
+const historiesJSON = [
     {
         "historyTitle": "情報系アプリ（新規機能開発）",
         "period": "2025.01 ~ 2025.03",
@@ -224,13 +264,74 @@ const histories = [
 ];
 
 /**
+ * スキルデータ
+ */
+const skillsJSON = [
+    "HTML",
+    "CSS",
+    "JavaScript (jQuery)",
+    "TypeScript",
+    "React",
+    "C# (ASP.NET Core)",
+    "Java (Spring Boot)",
+    "PostgreSQL",
+    "SQL Server",
+    "VBA",
+    "リファクタリング",
+    "リーダブルコーディング",
+    "レイヤードアーキテクチャ",
+];
+
+/**
+ * スキルデータ(習熟度低め・練習中・関心事)
+ */
+const littleSkillsJSON = [
+    "クリーンアーキテチャ",
+    "Domain Driven Development",
+    "Test Driven Development",
+    "基本設計",
+    "テーブル設計",
+    "SQLチューニング",
+    "正規表現",
+    "Linux(ubunts)"
+];
+
+/**
+ * 使用ツール
+ */
+const useToolsJSON = [
+    "Windows",
+    "WinMerge",
+    "サクラエディタ",
+    "Eclipse",
+    "Visual Studio",
+    "Visual Studio Code",
+    "A5",
+    "DBeaver",
+    "WinSCP",
+    "Putty"
+];
+
+/**
  * 読んだ本
  */
-const readBooks = [
-    {
-
-    },
-    {
-
-    }
+const readBooksJSON = [
+    "SQLパズル",
+    "達人に学ぶSQL徹底指南書",
+    "SQLアンチパターン",
+    "システム開発・刷新のためのデータモデル大全",
+    "Head First デザインパターン",
+    "リーダブルコード",
+    "達人プログラマー",
+    "ルールズ・オブ・プログラミング",
+    "プリンシプル オブ プログラミング",
+    "実務で役立つシステム設計の原則",
+    "good code, bad code",
+    "問題解決のための「アルゴリズム × 数学」がしっかり身につく本",
+    "リファクタリング",
+    "実践ドメイン駆動設計",
+    "クリーンアーキテクチャ",
+    "ソフトウェア開発現場の「失敗」集めてみた",
+    "React開発入門",
+    "React 実践の教科書"
 ];
