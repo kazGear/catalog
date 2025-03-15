@@ -33,7 +33,7 @@ const calcBirthDay = () => {
     let age = today.getFullYear() - birthDay.getFullYear();
     if (today < thisYearBirthDay) age--;
 
-    $("#age").text(age);
+    $("#myAge").text(age);
 };
 
 const textDecoration = () => {
@@ -45,7 +45,39 @@ const textDecoration = () => {
     });
 };
 
-const createJobCareer = () => {
+const editLastUpdate = () => {
+    $("#lastUpdate").text(metaDataJSON.lastUpdate);
+}
+
+const editMyName = () => {
+    $("#myName").text(profileJSON.myName);
+}
+
+const editMyAddress = () => {
+    $("#myAddress").text(profileJSON.myAddress);
+}
+
+const editPrintPageLink = () => {
+    $("#printPageLinkText").text(metaDataJSON.toPrintText);
+    $("#printPageLink").prop("href", metaDataJSON.toPrintHref);
+}
+
+const editPortfolio = () => {
+    $("#appURLCaption").text(portfolioJSON.appURLCaption);
+    $("#appURLText").text(portfolioJSON.appURL);
+    $("#appURL").prop("href", portfolioJSON.appURL);
+
+    $("#portfolioComment1").text("　" + portfolioJSON.comment1);
+    $("#portfolioComment2").text("　" + portfolioJSON.comment2);
+    $("#portfolioComment3").text("　" + portfolioJSON.comment3);
+    $("#portfolioComment4").text(portfolioJSON.comment4);
+
+    $("#sourceURLCaption").text(portfolioJSON.sourceURLCaption);
+    $("#sourceURLText").text(portfolioJSON.sourceURL);
+    $("#sourceURL").prop("href", portfolioJSON.sourceURL);
+}
+
+const editJobCareer = () => {
     // 日付文字列 降順ソート (key: 期間の最終年月, 例: 2024/08 < 2024/10)
     const historiesJson = [...historiesJSON].sort(
         (a, b) => b.period.substring(b.period.length - PELIOD_STR_LENGTH).localeCompare(a.period.substring(a.period.length - PELIOD_STR_LENGTH))
@@ -60,7 +92,7 @@ const createJobCareer = () => {
         jobDetails.forEach(detail => jobContentDetails += `<p>${detail}</p>`);
 
         // 経歴を構築
-        $("#rightBlock").append(
+        $("#historiesFrame").append(
             `<div class="history">` +
                 // 経歴タイトルを構築
                 `<h1 class="historyTitle">
@@ -84,43 +116,38 @@ const createJobCareer = () => {
     }
 }
 
-const createSkills = () => {
+const editSkills = () => {
     const skills = [...skillsJSON];
     skills.forEach(skill => $("#skills").append(`<p>${skill}</p>`));
 }
 
-const createLittleSkills = () => {
+const editLittleSkills = () => {
     const littleSkills = [...littleSkillsJSON];
     littleSkills.forEach(skill => $("#littleSkills").append(`<p>${skill}</p>`));
 }
 
-const createUseTools = () => {
+const editUseTools = () => {
     const useTools = [...useToolsJSON];
     useTools.forEach(tool => $("#useTools").append(`<p>${tool}</p>`));
 }
 
-const createReadBooks = () => {
+const editReadBooks = () => {
     const readBooks = [...readBooksJSON];
     readBooks.forEach(book => $("#modalWindow > .contents").append(`<p>📖${book}</p>`));
     $("#modalWindow > .contents").append("<br/>");
     $("#modalWindow > .contents").append("※その他５０冊以上");
 }
 
-/**
- * 処理実行部
- */
-$(() => {
-    createSkills();
-    createLittleSkills();
-    createUseTools();
-    createJobCareer();
-    createReadBooks();
-
-    calcBirthDay();
-    addEventOpenWindow();
-    addEventCloseWindow();
-    textDecoration();
-});
+const editPr = () => {
+    $("#prPoint1").text(prJSON.point1);
+    $("#prComment1").text(prJSON.comment1);
+    $("#prPoint2").text(prJSON.point2);
+    $("#prComment2").text(prJSON.comment2);
+    $("#prPoint3").text(prJSON.point3);
+    $("#prComment3").text(prJSON.comment3);
+    $("#prPoint4").text(prJSON.point4);
+    $("#prComment4").text(prJSON.comment4);
+}
 
 /***********************************************************
  * jsons
@@ -264,6 +291,23 @@ const historiesJSON = [
 ];
 
 /**
+ * メタデータ
+ */
+const metaDataJSON = {
+    "lastUpdate": "2025/03/02",
+    "toPrintText": "プリント用レイアウト表示",
+    "toPrintHref": "./CatalogPrint.html",
+}
+
+/**
+ * 基本情報
+ */
+const profileJSON = {
+    "myName": "尾畑　一貴",
+    "myAddress": "福岡県福岡市在住"
+}
+
+/**
  * スキルデータ
  */
 const skillsJSON = [
@@ -335,3 +379,31 @@ const readBooksJSON = [
     "React開発入門",
     "React 実践の教科書"
 ];
+
+/**
+ * ポートフォリオ
+ */
+const portfolioJSON = {
+    "appURLCaption": "成果物",
+    "appURL": "https://kazapp-trial.com",
+    "sourceURLCaption": "ソース（React, TypeScript, C#/ASP.NET CORE, PostgreSQL, Linux:Ubuntu）",
+    "sourceURL": "https://github.com/kazGear/kaz_app.git",
+    "comment1": "ゲームが主体のプログラムです。某RPGのカジノの某ゲームと、昔流行ったえんぴつを転がすゲームを足したようなものです。",
+    "comment2": "他にはゲームに関連する事項として、ログイン認証や、お買い物（疑似）、各種設定などありきたりなものを実装（未完成部分大量にあり）してみました。",
+    "comment3": "SSL証明書を入れておりますので、お気軽に触れてみてください。",
+    "comment4": "（chrome, edge推奨。スマホ非対応。）"
+}
+
+/**
+ * PR事項
+ */
+const prJSON = {
+    "point1": "本番障害なし",
+    "comment1": "自身で書いたコードは、リリース後に障害が発生していません。安全なコードを書こうと心がけています。",
+    "point2": "プログラムの品質を意識できる",
+    "comment2": "書ければ良し、動けば良しとは思わず、可読性・保守性・拡張可能性も考慮します。",
+    "point3": "学習意欲が非常に高い",
+    "comment3": "読書やWebでの調べもの、コーディングを日々実践しています。\n通勤や昼休みなどの空き時間でも何かしら勉強していることが多いです。",
+    "point4": "好んでこの仕事をしている",
+    "comment4": "よって日々成長します。あれこれ考えるのは楽しいことです。",
+}

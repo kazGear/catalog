@@ -3,64 +3,62 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="./modules/Catalog.css" />
+        <link rel="stylesheet" href="./modules/Catalog.css"/>
         <title>経歴書</title>
     </head>
     <body>
         <main>
             <!-- 自身についてスキル等など -->
-            <div class="leftBlock">
-                <div class="lastUpdate">
-                    <p>最終更新日：2025/3/2</p>
+            <div class="aboutMeFrame">
+                <div class="lastUpdateFrame">
+                    <p>最終更新日：<span id="lastUpdate"><!-- JSで構築 --></span></p>
                 </div>
 
                 <!-- イメージ画像 -->
-                <div class="imageBlock">
+                <div class="imageBlockFrame">
                     <img id="myImage" class="myImage" src="./modules/me.png" alt="me" />
                 </div>
 
-                <div class="myName">
-                    <p>尾畑&emsp;一貴<span id="age" class="age"><!-- JSで計算 --></span>歳</p>
-                    <p>福岡県福岡市在住</p>
+                <!-- プロフィール -->
+                <div class="profileFrame leftContents">
+                    <p>氏名：<span id="myName"><!-- JSで構築 --></span></p>
+                    <p>年齢：<span id="myAge"><!-- JSで算出 --></span>歳</p>
+                    <p>住所：<span id="myAddress"><!-- JSで構築 --></span></p>
+                    <a id="printPageLink"><p id="printPageLinkText"><!-- JSで構築 --></p></a>
                 </div>
 
                 <!-- ポートフォリオ -->
-                <div class="leftContents">
-                    <p><span class="strong">ポートフォリオ</span><br/>（未完成。不定期に更新します。）</p>
+                <div id="portfolio" class="leftContents">
+                    <p class="strong">ポートフォリオ</p>
+                    <p>（未完成。不定期に更新します。）</p>
                     <hr />
-                    <p>成果物</p>
-                    <a href="https://kazapp-trial.com" target="_blank">
-                        https://kazapp-trial.com
-                    </a>
-                    <br/><br/>
-                    <p>
-                        &emsp;ゲームが主体のプログラムです。某RPGのカジノの某ゲームと、昔流行ったえんぴつを転がすゲームを足したようなものです。<br/>&emsp;他にはゲームに関連する事項として、ログイン認証や、お買い物（疑似）、各種設定などありきたりなものを実装（未完成部分大量にあり）してみました。<br/>&emsp;SSL証明書を入れておりますので、お気軽に触れてみてください。
-                        <br/>（chrome, edge推奨。スマホ非対応。）
-                    </p>
-                    <br /><br />
-                    <p>ソース（React, C#/ASP.NET CORE, PostgreSQL, Linux:Ubuntu）</p>
-                    <a href="https://github.com/kazGear/kaz_app.git" target="_blank">
-                        https://github.com/kazGear/kaz_app.git
-                    </a>
+                    <p id="appURLCaption"><!-- JSで構築 --></p>
+                    <a id="appURL" class="appURL" target="_blank"><p id="appURLText"><!-- JSで構築 --></p></a>
+                    <p id="portfolioComment1"><!-- JSで構築 --></p>
+                    <p id="portfolioComment2"><!-- JSで構築 --></p>
+                    <p id="portfolioComment3"><!-- JSで構築 --></p>
+                    <p id="portfolioComment4"><!-- JSで構築 --></p>
+                    <p id="sourceURLCaption" class="sourceURLCaption"><!-- JSで構築 --></p>
+                    <a id="sourceURL" target="_blank"><p id="sourceURLText"><!-- JSで構築 --></p></a>
                 </div>
 
                 <!-- スキル -->
                 <div id="skills" class="leftContents">
-                    <p><span class="strong">Skills</span></p>
+                    <p class="strong">Skills</p>
                     <hr />
                     <!-- JSで構築 -->
                 </div>
 
                 <!-- スキル（習熟度低め・練習中・関心事） -->
                 <div id="littleSkills" class="leftContents">
-                    <p><span class="strong">Skills (習熟度低め・練習中・関心事)</span></p>
+                    <p class="strong">Skills (習熟度低め・練習中・関心事)</p>
                     <hr />
                     <!-- JSで構築 -->
                 </div>
 
                 <!-- 使用ツール -->
                 <div id="useTools" class="leftContents">
-                    <p><span class="strong">使用ツール、環境</span></p>
+                    <p class="strong">使用ツール、環境</p>
                     <hr />
                     <!-- JSで構築 -->
                 </div>
@@ -75,7 +73,7 @@
             </div>
 
             <!-- 経歴部 -->
-            <div id="rightBlock" class="rightBlock">
+            <div id="historiesFrame" class="historiesFrame">
                 <!-- jsで経歴を構築 -->
             </div>
         </main>
@@ -86,21 +84,14 @@
             <div class="contents">
                 <h3>PR</h3>
                 <hr />
-                <span class="detailTitle"><h4 class="decoration">本番障害なし</h4></span>
-                <p>
-                    自身で書いたコードは、リリース後に障害が発生していません。安全なコードを書こうと心がけています。
-                </p>
-                <span class="detailTitle"><h4 class="decoration">プログラムの品質を意識できる</h4></span>
-                <p>
-                    書ければ良し、動けば良しとは思わず、可読性・保守性・拡張可能性も考慮します。
-                </p>
-                <span class="detailTitle"><h4 class="decoration">学習意欲が非常に高い</h4></span>
-                <p>
-                    読書やWebでの調べもの、コーディングを日々実践しています。<br />
-                    通勤や昼休みなどの空き時間でも何かしら勉強していることが多いです。
-                </p>
-                <span class="detailTitle"><h4 class="decoration">好んでこの仕事をしている</h4></span>
-                <p>よって日々成長します。あれこれ考えるのは楽しいことです。</p>
+                <span class="detailTitle"><h4 id="prPoint1" class="decoration"><!-- JSで構築 --></h4></span>
+                <p id="prComment1"><!-- JSで構築 --></p>
+                <span class="detailTitle"><h4 id="prPoint2" class="decoration"><!-- JSで構築 --></h4></span>
+                <p id="prComment2"><!-- JSで構築 --></p>
+                <span class="detailTitle"><h4 id="prPoint3" class="decoration"><!-- JSで構築 --></h4></span>
+                <p id="prComment3"><!-- JSで構築 --></p>
+                <span class="detailTitle"><h4 id="prPoint4" class="decoration"><!-- JSで構築 --></h4></span>
+                <p id="prComment4"><!-- JSで構築 --></p>
                 <br />
                 <h3><span class="detailTitle">購入書籍</span></h3>
                 <hr />
@@ -113,5 +104,24 @@
 
         <script src="./modules/jQuery3.7.1.min.js"></script>
         <script src="./modules/Catalog.js"></script>
+        <script>
+            editLastUpdate();
+            editMyName();
+            editMyAddress();
+            editPrintPageLink();
+            editPortfolio();
+            editPr();
+
+            editSkills();
+            editLittleSkills();
+            editUseTools();
+            editJobCareer();
+            editReadBooks();
+
+            calcBirthDay();
+            addEventOpenWindow();
+            addEventCloseWindow();
+            textDecoration();
+        </script>
     </body>
 </html>

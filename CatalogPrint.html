@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./modules/CatalogPrint.css" />
+        <title>経歴書</title>
+    </head>
+    <body>
+        <!-- プリント時のレイアウト -->
+        <main>
+            <div class="titleFrame">
+                <h1 class="title">経歴書</h1>
+            </div>
+            <!-- プロフィール部 -->
+            <div class="profileFrame">
+                <!-- 基本情報 -->
+                <div class="profile">
+                    <div class="nameFrame">
+                        <span>氏名：</span><span id="name" class="name">尾畑一貴</span>
+                    </div>
+
+                    <div class="ageFrame">
+                        <span>年齢：</span><span id="age" class="age"><!-- JSで計算 --></span>歳
+                    </div>
+
+                    <div class="addressFrame">
+                        <span>住所：</span><span id="address" class="address">福岡県福岡市在住</span>
+                    </div>
+
+                    <!-- スキル -->
+                    <div class="skillsFrame">
+                        <!-- JSで構築 -->
+                        <span>スキル：</span>
+                    </div>
+
+                    <!-- スキル（習熟度低め・練習中・関心事） -->
+                    <div class="littleSkillsFrame">
+                        <!-- JSで構築 -->
+                        <span>スキル（習熟度低め・練習中・関心事）：</span>
+                    </div>
+
+                    <!-- 使用ツール -->
+                    <div class="useToolsFrame">
+                        <!-- JSで構築 -->
+                        <span>ツール：</span>
+                    </div>
+                </div>
+
+                <!-- イメージ画像 -->
+                <div class="imageBlock">
+                    <img id="myImage" class="myImage" src="./modules/me.png" alt="me" />
+                </div>
+            </div>
+
+            <!-- ポートフォリオ -->
+            <div class="portfolioFrame">
+                <span>ポートフォリオを関係をつらつらっと</span>
+            </div>
+
+            <!-- 経歴部 -->
+            <div class="historiesFrame">
+                <!-- JSで構築 -->
+                <span>経歴がずらーっと並ぶ</span>
+            </div>
+        </main>
+
+        <script src="./modules/jQuery3.7.1.min.js"></script>
+        <script src="./modules/Catalog.js"></script>
+        <script>
+            calcBirthDay();
+        </script>
+    </body>
+</html>

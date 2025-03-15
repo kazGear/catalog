@@ -6,12 +6,12 @@
     body {
         overflow: visible !important;
     }
-    .leftBlock {
+    .aboutMeFrame {
         height: auto !important;
         overflow: visible !important;
         color: black !important;
     }
-    .rightBlock {
+    .historiesFrame {
         height: auto !important;
         overflow: visible !important;
     }
@@ -68,7 +68,7 @@ a {
 }
 
 
-.leftBlock {
+.aboutMeFrame {
     width: 100%;
     min-width: 270px;
     text-align: center;
@@ -77,15 +77,15 @@ a {
     overflow-y: scroll;
 }
 
-.lastUpdate {
+.lastUpdateFrame {
     text-align: right;
     margin: 20px;
 }
-.lastUpdate > p {
+.lastUpdateFrame > p {
     font-size: 10px;
 }
 
-.imageBlock {
+.imageBlockFrame {
     width: 160px;
     height: 160px;
     margin: 20px auto;
@@ -93,19 +93,24 @@ a {
     text-align: center;
     background: #ab9912;
 }
-.imageBlock > .myImage {
+.imageBlockFrame > .myImage {
     width: 95%;
     height: 95%;
     border-radius: 50%;
     margin: 2px 0 0 -6px;
 }
 
-.myName {
+.profileFrame {
     margin-bottom: 20px;
 }
 
-.age {
-    margin-left: 20px;
+.appURL {
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.leftContents > .sourceURLCaption {
+    margin-top: 20px;
 }
 
 .leftContents {
@@ -138,7 +143,7 @@ a {
     cursor: pointer;
 }
 
-.rightBlock {
+.historiesFrame {
     width: 100%;
     overflow-y: scroll;
     background: rgb(215, 215, 215);
@@ -162,8 +167,6 @@ a {
 }
 .jobContent {
     font-weight: 800;
-}
-.jobContent {
     margin-top: 30px;
 }
 .jobContent > .jobContentTitle {
@@ -237,8 +240,8 @@ a {
 }
 
 @media (max-width: 599px) {
-    .leftBlock::-webkit-scrollbar,
-    .rightBlock::-webkit-scrollbar {
+    .aboutMeFrame::-webkit-scrollbar,
+    .historiesFrame::-webkit-scrollbar {
         display: none;
     }
 }
@@ -249,11 +252,11 @@ a {
         display: flex;
     }
 
-    .leftBlock {
+    .aboutMeFrame {
         width: 30%;
     }
 
-    .rightBlock {
+    .historiesFrame {
         width: 70%;
     }
 

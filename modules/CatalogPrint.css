@@ -1,0 +1,43 @@
+/*****************************************************************************
+印刷設定
+ *****************************************************************************/
+@media print {
+    /*  */
+}
+
+body {
+    font-family: "BIZ UD明朝 Medium", "Consolas";
+    margin: 0;
+    overflow: visible !important;
+}
+main {
+    margin: 20px;
+}
+table, td {
+    border: 1px black solid;
+    border-collapse: collapse;
+}
+td {
+    padding: 10px;
+}
+
+.title {
+    text-align: center;
+}
+
+.profileFrame {
+    display: flex;
+    font-size: 20px;
+}
+.profileFrame > .profile {
+    width: 80%;
+}
+.profileFrame > .imageBlock {
+    display: flex;
+    justify-content: center;
+    width: 20%;
+}
+.profileFrame > .imageBlock > .myImage {
+    width: 150px;
+    height: 150px;
+}
