@@ -7,7 +7,8 @@
 
 body {
     font-family: "BIZ UD明朝 Medium", "Consolas";
-    margin: 0;
+    width: 85%;
+    margin: auto;
     overflow: visible !important;
 }
 main {
@@ -20,6 +21,9 @@ table, td {
 td {
     padding: 10px;
 }
+p {
+    margin: 0;
+}
 
 .title {
     text-align: center;
@@ -27,17 +31,99 @@ td {
 
 .profileFrame {
     display: flex;
-    font-size: 20px;
+    margin-bottom: 20px;
 }
 .profileFrame > .profile {
     width: 80%;
+    border: 1px solid black;
+    margin-right: 20px;
 }
 .profileFrame > .imageBlock {
     display: flex;
     justify-content: center;
     width: 20%;
+    height: 170px;
+    border: 1px solid black;
 }
 .profileFrame > .imageBlock > .myImage {
     width: 150px;
     height: 150px;
+    display: block;
+    margin: 10px;
+}
+
+.profile > h3 {
+    margin-left: 20px;
+}
+
+.profileTable {
+    width: 90%;
+    margin: 0 auto 20px;
+}
+
+.profileCaption {
+    width: 15%;
+    min-width: 110px;
+    font-weight: 600;
+}
+
+.portfolioFrame {
+    border: 1px solid black;
+    margin-bottom: 20px;
+}
+.portfolioFrame > div {
+    margin: 20px;
+}
+
+.portfolioComment1, .portfolioComment2, .portfolioComment3 {
+    margin-bottom: 10px;
+}
+
+.appURL, .sourceURL {
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.appURLCaption, .sourceURLCaption {
+    font-weight: 600;
+}
+
+.historiesFrame {
+    border: 1px solid black;
+    margin-bottom: 20px;
+}
+.historiesFrame > h3 {
+    margin: 20px 0 40px 20px;
+}
+
+.historyDetail > p {
+    margin-bottom: 10px;
+}
+
+.jobContent > div {
+    margin-top: 10px;
+}
+
+.history {
+    margin: 20px 20px 40px 20px;
+}
+
+.historyTitle {
+    text-decoration: underline;
+}
+
+.detailTitle {
+    font-weight: 600;
+}
+
+.prFrame {
+    border: 1px solid black;
+    margin-bottom: 20px;
+}
+.prFrame > div {
+    margin: 20px;
+}
+
+.prComment1, .prComment2, .prComment3, .prComment4 {
+    margin: 10px 0 20px 20px;
 }

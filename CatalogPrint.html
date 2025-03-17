@@ -16,35 +16,36 @@
             <div class="profileFrame">
                 <!-- 基本情報 -->
                 <div class="profile">
-                    <div class="nameFrame">
-                        <span>氏名：</span><span id="name" class="name">尾畑一貴</span>
-                    </div>
+                    <h3>プロフィール</h3>
 
-                    <div class="ageFrame">
-                        <span>年齢：</span><span id="age" class="age"><!-- JSで計算 --></span>歳
-                    </div>
-
-                    <div class="addressFrame">
-                        <span>住所：</span><span id="address" class="address">福岡県福岡市在住</span>
-                    </div>
-
-                    <!-- スキル -->
-                    <div class="skillsFrame">
-                        <!-- JSで構築 -->
-                        <span>スキル：</span>
-                    </div>
-
-                    <!-- スキル（習熟度低め・練習中・関心事） -->
-                    <div class="littleSkillsFrame">
-                        <!-- JSで構築 -->
-                        <span>スキル（習熟度低め・練習中・関心事）：</span>
-                    </div>
-
-                    <!-- 使用ツール -->
-                    <div class="useToolsFrame">
-                        <!-- JSで構築 -->
-                        <span>ツール：</span>
-                    </div>
+                    <table class="profileTable">
+                        <tbody>
+                            <tr>
+                                <td class="profileCaption">氏名</td>
+                                <td class="profileContents"><span id="myName" class="name"><!-- JSで構築 --></span></td>
+                            </tr>
+                            <tr>
+                                <td class="profileCaption">年齢</td>
+                                <td class="profileContents"><span id="myAge" class="age"><!-- JSで計算 --></span>歳</td>
+                            </tr>
+                            <tr>
+                                <td class="profileCaption">住所</td>
+                                <td class="profileContents"><span id="myAddress" class="address"><!-- JSで構築 --></td>
+                            </tr>
+                            <tr>
+                                <td class="profileCaption">スキル</td>
+                                <td class="profileContents"><div id="skills"></div></td>
+                            </tr>
+                            <tr>
+                                <td class="profileCaption">スキル<br>(習熟度・低)</td>
+                                <td class="profileContents"><div id="littleSkills"></div></td>
+                            </tr>
+                            <tr>
+                                <td class="profileCaption">ツール</td>
+                                <td class="profileContents"><div id="useTools"></div></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
 
                 <!-- イメージ画像 -->
@@ -55,19 +56,68 @@
 
             <!-- ポートフォリオ -->
             <div class="portfolioFrame">
-                <span>ポートフォリオを関係をつらつらっと</span>
+                <!-- JSで構築 -->
+                <div>
+                    <h3>ポートフォリオ</h3>
+                    <p id="appURLCaption" class="appURLCaption"></p>
+                    <a id="appURL" class="appURL" target="_blank">
+                        <p id="appURLText"></p>
+                    </a>
+                    <p id="sourceURLCaption" class="sourceURLCaption"></p>
+                    <a id="sourceURL" class="sourceURL" target="_blank">
+                        <p id="sourceURLText"></p>
+                    </a>
+                    <p id="portfolioComment1" class="portfolioComment1"></p>
+                    <p id="portfolioComment2" class="portfolioComment2"></p>
+                    <p id="portfolioComment3" class="portfolioComment3"></p>
+                    <p id="portfolioComment4" class="portfolioComment4"></p>
+                </div>
             </div>
 
             <!-- 経歴部 -->
-            <div class="historiesFrame">
+            <div id="historiesFrame" class="historiesFrame">
                 <!-- JSで構築 -->
-                <span>経歴がずらーっと並ぶ</span>
+                <h3>職務経歴</h3>
+            </div>
+
+            <!-- PR部 -->
+            <div class="prFrame">
+                <!-- JSで構築 -->
+                <div>
+                    <h3>PR</h3>
+                    <span class="detailTitle"><p id="prPoint1" class="decoration"></p></span>
+                    <p id="prComment1" class="prComment1"></p>
+                    <span class="detailTitle"><p id="prPoint2" class="decoration"></p></span>
+                    <p id="prComment2" class="prComment2"></p>
+                    <span class="detailTitle"><p id="prPoint3" class="decoration"></p></span>
+                    <p id="prComment3" class="prComment3"></p>
+                    <span class="detailTitle"><p id="prPoint4" class="decoration"></p></span>
+                    <p id="prComment4" class="prComment4"></p>
+                    <br />
+
+                    <div id="readBooks">
+                        <h3>購入書籍</h3>
+                    </div>
+                </div>
             </div>
         </main>
 
         <script src="./modules/jQuery3.7.1.min.js"></script>
         <script src="./modules/Catalog.js"></script>
         <script>
+            editLastUpdate();
+            editMyName();
+            editMyAddress();
+            editPrintPageLink();
+            editPortfolio();
+            editPr();
+
+            editSkillsForPrint();
+            editLittleSkillsForPrint();
+            editUseToolsForPrint();
+            editJobCareerForPrint();
+            editReadBooksForPrint();
+
             calcBirthDay();
         </script>
     </body>

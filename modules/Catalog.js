@@ -67,9 +67,9 @@ const editPortfolio = () => {
     $("#appURLText").text(portfolioJSON.appURL);
     $("#appURL").prop("href", portfolioJSON.appURL);
 
-    $("#portfolioComment1").text("　" + portfolioJSON.comment1);
-    $("#portfolioComment2").text("　" + portfolioJSON.comment2);
-    $("#portfolioComment3").text("　" + portfolioJSON.comment3);
+    $("#portfolioComment1").text(portfolioJSON.comment1);
+    $("#portfolioComment2").text(portfolioJSON.comment2);
+    $("#portfolioComment3").text(portfolioJSON.comment3);
     $("#portfolioComment4").text(portfolioJSON.comment4);
 
     $("#sourceURLCaption").text(portfolioJSON.sourceURLCaption);
@@ -115,27 +115,83 @@ const editJobCareer = () => {
         historyNo++;
     }
 }
+const editJobCareerForPrint = () => {
+    // 日付文字列 降順ソート (key: 期間の最終年月, 例: 2024/08 < 2024/10)
+    const historiesJson = [...historiesJSON].sort(
+        (a, b) => b.period.substring(b.period.length - PELIOD_STR_LENGTH).localeCompare(a.period.substring(a.period.length - PELIOD_STR_LENGTH))
+    );
+
+    // DOM構築
+    let historyNo = 1;
+    for (const history of historiesJson) {
+        // 業務内容詳細の構築
+        let jobContentDetails = "";
+        const jobDetails = [...history.jobContents];
+        jobDetails.forEach(detail => jobContentDetails += `<p>${detail}</p>`);
+
+        // 経歴を構築
+        $("#historiesFrame").append(
+            `<div class="history">` +
+                // 経歴タイトルを構築
+                `<h3 class="historyTitle">
+                    ${HALF_SPACE}#${HALF_SPACE}${historyNo}${WHOLE_SPACE}${history.historyTitle}
+                 </h3>` +
+                `<div class="historyDetail">` +
+                    `<p><span class="detailTitle">期間：</span>${history.period}</p>` + // 期間
+                    `<p><span class="detailTitle">業種：</span>${history.industry}</p>` + // 業種
+                    `<p><span class="detailTitle">規模：</span>${history.scale}</p>` + // 規模
+                    `<p><span class="detailTitle">使用言語等：</span>${history.programmingLanguages}</p>` + // 使用言語等
+                    `<div class="jobContent">` +
+                        `<p class="jobContentTitle"><span class="detailTitle">業務内容</span></p>` +
+                        `<div>` +
+                            jobContentDetails + // 業務内容詳細
+                        `</div>` +
+                    `</div>` +
+                `</div>` +
+            `</div>`
+        );
+        historyNo++;
+    }
+}
 
 const editSkills = () => {
     const skills = [...skillsJSON];
     skills.forEach(skill => $("#skills").append(`<p>${skill}</p>`));
+}
+const editSkillsForPrint = () => {
+    const skills = [...skillsJSON];
+    skills.forEach(skill => $("#skills").append(`<span>${skill}${WHOLE_SPACE}</span>`));
 }
 
 const editLittleSkills = () => {
     const littleSkills = [...littleSkillsJSON];
     littleSkills.forEach(skill => $("#littleSkills").append(`<p>${skill}</p>`));
 }
+const editLittleSkillsForPrint = () => {
+    const littleSkills = [...littleSkillsJSON];
+    littleSkills.forEach(skill => $("#littleSkills").append(`<span>${skill}${WHOLE_SPACE}</span>`));
+}
 
 const editUseTools = () => {
     const useTools = [...useToolsJSON];
     useTools.forEach(tool => $("#useTools").append(`<p>${tool}</p>`));
 }
+const editUseToolsForPrint = () => {
+    const useTools = [...useToolsJSON];
+    useTools.forEach(tool => $("#useTools").append(`<span>${tool}${WHOLE_SPACE}</span>`));
+}
 
 const editReadBooks = () => {
     const readBooks = [...readBooksJSON];
-    readBooks.forEach(book => $("#modalWindow > .contents").append(`<p>📖${book}</p>`));
+    readBooks.forEach(book => $("#modalWindow > .contents").append(`<p>・${book}</p>`));
     $("#modalWindow > .contents").append("<br/>");
     $("#modalWindow > .contents").append("※その他５０冊以上");
+}
+const editReadBooksForPrint = () => {
+    const readBooks = [...readBooksJSON];
+    readBooks.forEach(book => $("#readBooks").append(`<p>・${book}</p>`));
+    $("#readBooks").append("<br/>");
+    $("#readBooks").append("※その他５０冊以上");
 }
 
 const editPr = () => {
@@ -295,7 +351,7 @@ const historiesJSON = [
  */
 const metaDataJSON = {
     "lastUpdate": "2025/03/02",
-    "toPrintText": "プリント用レイアウト表示",
+    "toPrintText": "プリント向けレイアウト表示",
     "toPrintHref": "./CatalogPrint.html",
 }
 
@@ -313,11 +369,11 @@ const profileJSON = {
 const skillsJSON = [
     "HTML",
     "CSS",
-    "JavaScript (jQuery)",
+    "JavaScript(jQuery)",
     "TypeScript",
     "React",
-    "C# (ASP.NET Core)",
-    "Java (Spring Boot)",
+    "C#(ASP.NET Core)",
+    "Java(Spring Boot)",
     "PostgreSQL",
     "SQL Server",
     "VBA",
@@ -350,7 +406,7 @@ const useToolsJSON = [
     "Eclipse",
     "Visual Studio",
     "Visual Studio Code",
-    "A5",
+    "A5Mk2",
     "DBeaver",
     "WinSCP",
     "Putty"
@@ -376,7 +432,7 @@ const readBooksJSON = [
     "実践ドメイン駆動設計",
     "クリーンアーキテクチャ",
     "ソフトウェア開発現場の「失敗」集めてみた",
-    "React開発入門",
+    "React 開発入門",
     "React 実践の教科書"
 ];
 
@@ -389,9 +445,9 @@ const portfolioJSON = {
     "sourceURLCaption": "ソース（React, TypeScript, C#/ASP.NET CORE, PostgreSQL, Linux:Ubuntu）",
     "sourceURL": "https://github.com/kazGear/kaz_app.git",
     "comment1": "ゲームが主体のプログラムです。某RPGのカジノの某ゲームと、昔流行ったえんぴつを転がすゲームを足したようなものです。",
-    "comment2": "他にはゲームに関連する事項として、ログイン認証や、お買い物（疑似）、各種設定などありきたりなものを実装（未完成部分大量にあり）してみました。",
+    "comment2": "他にはゲームに関連する事項として、ログイン認証や、お買い物（疑似）、各種設定などありきたりなものを実装（未完成部分あり）してみました。",
     "comment3": "SSL証明書を入れておりますので、お気軽に触れてみてください。",
-    "comment4": "（chrome, edge推奨。スマホ非対応。）"
+    "comment4": "(chrome, edge推奨。スマホ非対応。)"
 }
 
 /**
