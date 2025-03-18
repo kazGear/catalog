@@ -352,7 +352,7 @@ const historiesJSON = [
 const metaDataJSON = {
     "lastUpdate": "2025/03/02",
     "toPrintText": "プリント向けレイアウト表示",
-    "toPrintHref": "./CatalogPrint.html",
+    "toPrintHref": "./modules/CatalogPrint.html",
 }
 
 /**
