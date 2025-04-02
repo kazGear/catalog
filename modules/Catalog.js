@@ -200,14 +200,24 @@ const editReadBooksForPrint = () => {
 }
 
 const editPr = () => {
-    $("#prPoint1").text(prJSON.point1);
-    $("#prComment1").text(prJSON.comment1);
-    $("#prPoint2").text(prJSON.point2);
-    $("#prComment2").text(prJSON.comment2);
-    $("#prPoint3").text(prJSON.point3);
-    $("#prComment3").text(prJSON.comment3);
-    $("#prPoint4").text(prJSON.point4);
-    $("#prComment4").text(prJSON.comment4);
+    for (const pr of prJSON) {
+        $("#prFrame").append(
+            `<span class="detailTitle"><h4 class="decoration">${pr.point}</h4></span>` +
+            `<p>${pr.comment}</p>`
+        );
+    }
+}
+
+const editPrForPrint = () => {
+    let index = 1;
+
+    for (const pr of prJSON) {
+        $("#pr").append(
+            `<h3>${index}. ${pr.point}</h3>` +
+            `<p>${pr.comment}</p>`
+        );
+        index++;
+    }
 }
 
 /***********************************************************
@@ -459,16 +469,24 @@ const portfolioJSON = {
 /**
  * PR事項
  */
-const prJSON = {
-    "point1": "プログラムの品質を意識できる",
-    "comment1": "書ければ良し、動けば良しとは思わず、可読性・保守性・拡張可能性も考慮します。",
-    "point2": "学習意欲が非常に高い",
-    "comment2":
-        "読書やWebでの調べもの、コーディングを日々実践しています。\n" +
-        "通勤や昼休みなどの空き時間でも何かしら勉強していることが多いです。\n" +
-        "「10年選手と比べても遜色ない」と評価を受けたこともあります。",
-    "point3": "好んでこの仕事をしている",
-    "comment3": "よって日々成長します。あれこれ考えるのは楽しいことです。",
-    "point4": "温和な性格",
-    "comment4": "コミュニケーション力に問題ありません。極力丁寧に接します。"
-}
+const prJSON = [
+    {
+        "point": "プログラムの品質を意識できる",
+        "comment": "書ければ良し、動けば良しとは思わず、可読性・保守性・拡張可能性も考慮します。",
+    },
+    {
+        "point": "学習意欲が非常に高い",
+        "comment":
+            "読書やWebでの調べもの、コーディングを日々実践しています。\n" +
+            "通勤や昼休みなどの空き時間でも何かしら勉強していることが多いです。\n" +
+            "「10年選手と比べても遜色ない」と評価を受けたこともあります。",
+    },
+    {
+        "point": "好んでこの仕事をしている",
+        "comment": "よって日々成長します。あれこれ考えるのは楽しいことです。",
+    },
+    {
+        "point": "温和な性格",
+        "comment": "コミュニケーション力に問題ありません。極力丁寧に、敬意をもって接します。"
+    }
+]
