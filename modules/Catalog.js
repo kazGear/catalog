@@ -45,6 +45,12 @@ const textDecoration = () => {
     });
 };
 
+const titleDecoration = () => {
+    $(".sectionTitle").each((i, e) => { // i: インデックス, e: 要素
+        e.innerText = "=== " + e.innerText + " ======================================";
+    });
+}
+
 const editLastUpdate = () => {
     $("#lastUpdate").text(metaDataJSON.lastUpdate);
 }
@@ -67,14 +73,13 @@ const editPortfolio = () => {
     $("#appURLText").text(portfolioJSON.appURL);
     $("#appURL").prop("href", portfolioJSON.appURL);
 
-    $("#portfolioComment1").text(portfolioJSON.comment1);
-    $("#portfolioComment2").text(portfolioJSON.comment2);
-    $("#portfolioComment3").text(portfolioJSON.comment3);
-    $("#portfolioComment4").text(portfolioJSON.comment4);
-
     $("#sourceURLCaption").text(portfolioJSON.sourceURLCaption);
     $("#sourceURLText").text(portfolioJSON.sourceURL);
     $("#sourceURL").prop("href", portfolioJSON.sourceURL);
+
+    for (const comment of portfolioJSON.comment) {
+        $("#commentFrame").append(`<p>${comment}</p>`);
+    }
 }
 
 const editJobCareer = () => {
@@ -386,7 +391,6 @@ const skillsJSON = [
  * スキルデータ(習熟度低め・練習中・関心事)
  */
 const littleSkillsJSON = [
-    "クリーンアーキテチャ",
     "Domain Driven Development",
     "Test Driven Development",
     "基本設計",
@@ -444,22 +448,27 @@ const portfolioJSON = {
     "appURL": "https://kazapp-trial.com",
     "sourceURLCaption": "ソース（React, TypeScript, C#/ASP.NET CORE, PostgreSQL, Linux:Ubuntu）",
     "sourceURL": "https://github.com/kazGear/kaz_app.git",
-    "comment1": "ゲームが主体のプログラムです。某RPGのカジノの某ゲームと、昔流行ったえんぴつを転がすゲームを足したようなものです。",
-    "comment2": "他にはゲームに関連する事項として、ログイン認証や、お買い物（疑似）、各種設定などありきたりなものを実装（未完成部分あり）してみました。",
-    "comment3": "SSL証明書を入れておりますので、お気軽に触れてみてください。",
-    "comment4": "(chrome, edge推奨。スマホ非対応。)"
+    "comment": [
+        "ゲームが主体のプログラムです。某RPGのカジノの某ゲームと、昔流行ったえんぴつを転がすゲームを足したようなものです。",
+        "他にはゲームに関連する事項として、ログイン認証や、お買い物（疑似）、各種設定などありきたりなものを実装（未完成部分あり）してみました。",
+        "SSL証明書を入れておりますので、お気軽に触れてみてください。",
+        "(chrome, edge推奨。スマホ非対応。)"
+    ]
 }
 
 /**
  * PR事項
  */
 const prJSON = {
-    "point1": "本番障害なし",
-    "comment1": "自身で書いたコードは、リリース後に障害が発生していません。安全なコードを書こうと心がけています。",
-    "point2": "プログラムの品質を意識できる",
-    "comment2": "書ければ良し、動けば良しとは思わず、可読性・保守性・拡張可能性も考慮します。",
-    "point3": "学習意欲が非常に高い",
-    "comment3": "読書やWebでの調べもの、コーディングを日々実践しています。\n通勤や昼休みなどの空き時間でも何かしら勉強していることが多いです。",
-    "point4": "好んでこの仕事をしている",
-    "comment4": "よって日々成長します。あれこれ考えるのは楽しいことです。",
+    "point1": "プログラムの品質を意識できる",
+    "comment1": "書ければ良し、動けば良しとは思わず、可読性・保守性・拡張可能性も考慮します。",
+    "point2": "学習意欲が非常に高い",
+    "comment2":
+        "読書やWebでの調べもの、コーディングを日々実践しています。\n" +
+        "通勤や昼休みなどの空き時間でも何かしら勉強していることが多いです。\n" +
+        "「10年選手と比べても遜色ない」と評価を受けたこともあります。",
+    "point3": "好んでこの仕事をしている",
+    "comment3": "よって日々成長します。あれこれ考えるのは楽しいことです。",
+    "point4": "温和な性格",
+    "comment4": "コミュニケーション力に問題ありません。極力丁寧に接します。"
 }

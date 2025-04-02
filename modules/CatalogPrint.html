@@ -16,7 +16,7 @@
             <div class="profileFrame">
                 <!-- 基本情報 -->
                 <div class="profile">
-                    <h3>プロフィール</h3>
+                    <h3 class="sectionTitle">プロフィール</h3>
 
                     <table class="profileTable">
                         <tbody>
@@ -58,7 +58,7 @@
             <div class="portfolioFrame">
                 <!-- JSで構築 -->
                 <div>
-                    <h3>ポートフォリオ</h3>
+                    <h3 class="sectionTitle">ポートフォリオ</h3>
                     <p id="appURLCaption" class="appURLCaption"></p>
                     <a id="appURL" class="appURL" target="_blank">
                         <p id="appURLText"></p>
@@ -67,24 +67,23 @@
                     <a id="sourceURL" class="sourceURL" target="_blank">
                         <p id="sourceURLText"></p>
                     </a>
-                    <p id="portfolioComment1" class="portfolioComment1"></p>
-                    <p id="portfolioComment2" class="portfolioComment2"></p>
-                    <p id="portfolioComment3" class="portfolioComment3"></p>
-                    <p id="portfolioComment4" class="portfolioComment4"></p>
+                    <div id="commentFrame">
+                        <!-- JSで構築 -->
+                    </div>
                 </div>
             </div>
 
             <!-- 経歴部 -->
             <div id="historiesFrame" class="historiesFrame">
                 <!-- JSで構築 -->
-                <h3>職務経歴</h3>
+                <h3 class="sectionTitle">職務経歴</h3>
             </div>
 
             <!-- PR部 -->
             <div class="prFrame">
                 <!-- JSで構築 -->
                 <div>
-                    <h3>PR</h3>
+                    <h3 class="sectionTitle">PR</h3>
                     <span class="detailTitle"><p id="prPoint1" class="decoration"></p></span>
                     <p id="prComment1" class="prComment1"></p>
                     <span class="detailTitle"><p id="prPoint2" class="decoration"></p></span>
@@ -96,7 +95,7 @@
                     <br />
 
                     <div id="readBooks">
-                        <h3>購入書籍</h3>
+                        <h3 class="sectionTitle">購入書籍</h3>
                     </div>
                 </div>
             </div>
@@ -119,6 +118,7 @@
             editReadBooksForPrint();
 
             calcBirthDay();
+            titleDecoration();
         </script>
     </body>
 </html>
