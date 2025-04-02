@@ -165,7 +165,17 @@ const editSkills = () => {
 }
 const editSkillsForPrint = () => {
     const skills = [...skillsJSON];
-    skills.forEach(skill => $("#skills").append(`<span>${skill}${WHOLE_SPACE}</span>`));
+
+    let skillCount = 1;
+    for (const skill of skills) {
+        if (skillCount < skills.length) {
+            $("#skills").append(`<span>${skill}, ${HALF_SPACE}</span>`);
+        } else {
+            // 最終要素
+            $("#skills").append(`<span>${skill}</span>`);
+        }
+        skillCount++;
+    }
 }
 
 const editLittleSkills = () => {
@@ -174,7 +184,17 @@ const editLittleSkills = () => {
 }
 const editLittleSkillsForPrint = () => {
     const littleSkills = [...littleSkillsJSON];
-    littleSkills.forEach(skill => $("#littleSkills").append(`<span>${skill}${WHOLE_SPACE}</span>`));
+
+    let skillCount = 1;
+    for (const skill of littleSkills) {
+        if (skillCount < littleSkills.length) {
+            $("#littleSkills").append(`<span>${skill}, ${HALF_SPACE}</span>`);
+        } else {
+            // 最終要素
+            $("#littleSkills").append(`<span>${skill}</span>`);
+        }
+        skillCount++;
+    }
 }
 
 const editUseTools = () => {
@@ -183,7 +203,17 @@ const editUseTools = () => {
 }
 const editUseToolsForPrint = () => {
     const useTools = [...useToolsJSON];
-    useTools.forEach(tool => $("#useTools").append(`<span>${tool}${WHOLE_SPACE}</span>`));
+
+    let toolCount = 1;
+    for (const tool of useTools) {
+        if (toolCount < useTools.length) {
+            $("#useTools").append(`<span>${tool}, ${HALF_SPACE}</span>`);
+        } else {
+            // 最終要素
+            $("#useTools").append(`<span>${tool}</span>`);
+        }
+        toolCount++;
+    }
 }
 
 const editReadBooks = () => {
