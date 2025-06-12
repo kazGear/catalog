@@ -140,7 +140,7 @@ const editJobCareerForPrint = () => {
                 // 経歴タイトルを構築
                 `<h3 class="historyTitle">
                     ${HALF_SPACE}#${HALF_SPACE}${historyNo}${WHOLE_SPACE}${history.historyTitle}
-                 </h3>` +
+                </h3>` +
                 `<div class="historyDetail">` +
                     `<p><span class="detailTitle">期間：</span>${history.period}</p>` + // 期間
                     `<p><span class="detailTitle">業種：</span>${history.industry}</p>` + // 業種
@@ -153,7 +153,8 @@ const editJobCareerForPrint = () => {
                         `</div>` +
                     `</div>` +
                 `</div>` +
-            `</div>`
+            `</div>` +
+            `<br>`
         );
         historyNo++;
     }
@@ -276,6 +277,18 @@ const editPrForPrint = () => {
  */
 const historiesJSON = [
     {
+        "historyTitle": "基幹システム（リプレイス）",
+        "period": "2025.04 ~ 2025.06",
+        "industry": "美容",
+        "scale": "7名",
+        "programmingLanguages": "html, javaScript, jQuery, C#, ASP.NET Core, mySql",
+        "jobContents": [
+            "・障害対応",
+            "・バグ対応チーム配属。",
+            "・対応バグ件数: 25件（件数としては1位～2位で遷移）"
+        ]
+    },
+    {
         "historyTitle": "情報系アプリ（新規機能開発）",
         "period": "2025.01 ~ 2025.03",
         "industry": "金融",
@@ -303,7 +316,7 @@ const historiesJSON = [
         ]
     },
     {
-        "historyTitle": "情報系システム（総合テスト～）",
+        "historyTitle": "基幹システム（総合テスト～）",
         "period": "2024.06 ~ 2024.12",
         "industry": "住宅関連サービス",
         "scale": "30人",
@@ -355,7 +368,7 @@ const historiesJSON = [
         ]
     },
     {
-        "historyTitle": "WEBアプリ & 顧客所有アプリ（新規立ち上げ、既存アプリの改修・障害対応）",
+        "historyTitle": "WEBアプリ & 基幹アプリ（新規立ち上げ、既存アプリの改修・障害対応）",
         "period": "2021.06 ~ 2021.12",
         "industry": "製造",
         "scale": "1名",
@@ -455,9 +468,7 @@ const useToolsJSON = [
     "Visual Studio",
     "Visual Studio Code",
     "A5Mk2",
-    "DBeaver",
-    "WinSCP",
-    "Putty"
+    "DBeaver"
 ];
 
 /**
@@ -485,7 +496,8 @@ const readBooksJSON = [
     "TypeScriptとReact/Next.js 実践Webアプリケーション開発",
     "安全なWebアプリケーションの作り方",
     "ソフトウェアテストの教科書",
-    "始めての自働テスト"
+    "始めての自働テスト",
+    "ストリートコーダー"
 ];
 
 /**
@@ -500,7 +512,8 @@ const portfolioJSON = {
         "ゲームが主体のプログラムです。某RPGのカジノの某ゲームと、昔流行ったえんぴつを転がすゲームを足したようなものです。",
         "他にはゲームに関連する事項として、ログイン認証や、お買い物（疑似）、各種設定などありきたりなものを実装（未完成部分あり）してみました。",
         "SSL証明書を入れておりますので、お気軽に触れてみてください。",
-        "(chrome, edge推奨。スマホ非対応。)"
+        "※chrome, edge推奨。スマホ非対応。",
+        "※設計のまずさに気づき、コードの多くを改修中。"
     ]
 }
 
@@ -517,7 +530,7 @@ const prJSON = [
         "comment":
             "読書やWebでの調べもの、コーディングを日々実践しています。\n" +
             "通勤や昼休みなどの空き時間でも何かしら勉強していることが多いです。\n" +
-            "その影響か、能力が「10年選手と比べても遜色ない」と評価を受けたこともあります。",
+            "その影響か、能力が「10年選手と比べても遜色ない」「若手に見えない」と評価を受けたこともあります。",
     },
     {
         "point": "好んでこの仕事をしている",
